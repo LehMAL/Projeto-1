@@ -9,19 +9,21 @@ function NavBarComponent(){
         <Navbar collapseOnSelect expand="sm"  bg="dark" data-bs-theme="dark">
           <Container>
 
-            <Navbar.Brand href="/1">
+            <Navbar.Brand href="/">
                 <img src={logo} title='logo' style={{ width: '50px' }} />
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-                <Nav.Link href="/1">Home</Nav.Link>
-                <Nav.Link href="/2">Filmes</Nav.Link>    
-                <Nav.Link href="/3">Livros</Nav.Link>                  
+                <Nav.Link href="/Home">Home</Nav.Link>
+                <Nav.Link href="/Films">Filmes</Nav.Link>    
+                <Nav.Link href="/Books">Livros</Nav.Link>                  
             </Nav>
             <Nav>
-                <Nav.Link href="/4">Login</Nav.Link>
+            <Nav className="d-flex">
+                <a href="/Login" className="btn btn-success">Logar</a>
+            </Nav>
             </Nav>
             </Navbar.Collapse>
           </Container>

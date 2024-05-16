@@ -20,22 +20,22 @@ import LoginPage from './Pages/LoginPage';
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <HomePage/>,
+  },
+  {
+    path: "/Home",
     element: <HomePage />,
   },
   {
-    path: "/1",
-    element: <HomePage />,
-  },
-  {
-    path: "/2",
+    path: "/Films",
     element: <FilmsPage />,
   },
   {
-    path: "/3",
+    path: "/Books",
     element: <BooksPage />,
   },
   {
-    path: "/4",
+    path: "/Login",
     element: <LoginPage />,
   }
 ]);
