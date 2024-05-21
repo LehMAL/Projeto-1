@@ -21,7 +21,7 @@ function NavBarComponent(){
                 <Nav.Link href="/Books">Livros</Nav.Link>                  
             </Nav>
             <Nav>
-            <Nav className="d-flex">
+            <Nav className="d-flex col-2">
                 <a href="/Login" className="btn btn-success">Logar</a>
             </Nav>
             </Nav>

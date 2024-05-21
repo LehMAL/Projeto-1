@@ -1,6 +1,6 @@
 .slider-container {
-    width: 100%; /* ou qualquer valor adequado para o seu layout */
-    max-width: 1200px;
+    width: 100%;
+    max-width: 2000px;
     margin: auto;
   }
   
@@ -13,7 +13,8 @@
   .slider-image {
     width: 100%; /* Ajusta a largura da imagem ao container do slider */
     height: auto; /* Mantém a proporção da imagem */
-    max-height: 300px; /* Define uma altura máxima para todas as imagens */
+    max-height: 500px;  /* Máximo da altura da imagem */
+    min-height: auto;    
     object-fit: cover; /* Garante que a imagem se ajuste ao container sem distorção */
     object-position: bottom;
   }
@@ -31,7 +32,8 @@
   .catalog-image {
     width: 100%;
     height: auto;
-    max-height: 300px; /* Define uma altura máxima para as imagens do catálogo */
+    max-height: 500px;  /* Máximo da altura da imagem */
+    min-height: auto;
     object-fit: cover;
     border-radius: 8px; /* Bordas arredondadas para as imagens */
     transition: transform 0.2s;
@@ -40,3 +42,8 @@
   .catalog-image:hover {
     transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
   }
+
+  .card-header{
+    text-align: center;
+  }
+

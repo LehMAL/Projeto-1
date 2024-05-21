@@ -4,6 +4,7 @@ import { Alert } from "react-bootstrap";
 function LoginPage(){
     let [isClosed, setIsClosed] = useState(true)
     const [error, setError] = useState(null);
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -44,7 +45,7 @@ function LoginPage(){
     <>
     <form onSubmit={submeterFormulario}>
         <div className="pt-4">
-        <div className="card">
+        <div className="card mb-5 mx-3">
             <div className="card-header">
                 <h6>Login</h6>
             </div>
@@ -75,6 +76,7 @@ function LoginPage(){
                     </div>                
                 </div>
             </div>
+            <br/>
             <div className="card-footer text-end">
                 <button type="submit" className="btn btn-sm btn-success">Login</button>
             </div>
