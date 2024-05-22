@@ -4,7 +4,6 @@ import { Alert } from "react-bootstrap";
 function LoginPage(){
     let [isClosed, setIsClosed] = useState(true)
     const [error, setError] = useState(null);
-    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -21,6 +20,7 @@ function LoginPage(){
             });
 
             if (response.ok) {
+                //
                 console.log('Login successful');
             } else {
                 const data = await response.json();
@@ -45,7 +45,7 @@ function LoginPage(){
     <>
     <form onSubmit={submeterFormulario}>
         <div className="pt-4">
-        <div className="card mb-5 mx-3">
+        <div className="card">
             <div className="card-header">
                 <h6>Login</h6>
             </div>
@@ -76,11 +76,11 @@ function LoginPage(){
                     </div>                
                 </div>
             </div>
-            <br/>
+             </div>
             <div className="card-footer text-end">
                 <button type="submit" className="btn btn-sm btn-success">Login</button>
             </div>
-        </div>
+       
         </div>
     </div>
     </form>
