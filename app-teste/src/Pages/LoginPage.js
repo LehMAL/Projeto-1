@@ -1,91 +1,87 @@
-import { useState } from "react";
-import { Alert } from "react-bootstrap";
+import axios from 'axios';
+import React, { useState } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
 
-function LoginPage(){
+const LoginPage = () => {
     let [isClosed, setIsClosed] = useState(true)
-    const [error, setError] = useState(null);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
 
-    const handleSubmit = async (e) => {
+    async function handleSubmit(e){
         e.preventDefault();
 
-        try {
-            const response = await fetch('http://143.198.156.185/api/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            if (response.ok) {
-                //
-                console.log('Login successful');
-            } else {
-                const data = await response.json();
-                setError(data.message || 'Something went wrong');
-            }
-        } catch (error) {
-            setError('Something went wrong');
-            console.error('Error:', error);
+        let response = await axios.post('http://143.198.156.185/api/auth/login', {
+            "email": email,
+            "password": password
+        }).then(function (value) {
+            setSuccess(`Seja bem vindo, ${value.data.user.name}!`);
+            setError(null);
+          })
+          .catch(function (value) {
+            console.log(value);
+            setError(value.response.data.error);
+            setSuccess(null);
+          });
         }
-    };
-
-    function submeterFormulario(form){
-        alert("Login efetuado com sucesso!");
-        form.preventDefault();
-    }
-
-    function updatePasswordState(value){
-        setIsClosed(!isClosed);
-    }
+        function updatePasswordState(value){
+            setIsClosed(!isClosed);
+        }
 
     return (
-    <>
-    <form onSubmit={submeterFormulario}>
         <div className="pt-4">
-        <div className="card">
-            <div className="card-header">
-                <h6>Login</h6>
-            </div>
-            <div className="card-body">
-            {error && <Alert variant="danger">{error}</Alert>}
-                <div onSubmit={handleSubmit}>
-                <div className="row">
+        <div className="card col-lg-5 col-md-10 mx-auto ">
 
-                    <div className="col-12 mb-2">
-                        <label className="label-control">Login:</label>
-                        <input type="email" 
-                        className="form-control" 
-                        placeholder="Insira seu email"
-                        onChange={(e) => setEmail(e.target.value)}></input>
-                    </div>        
-                    
-                    <div className="col-12 mb-2">
-                        <label className="label-control">Senha:</label>
+            <div className="card-header">
+                Login
+            </div>
+            <div className=" mx-3 pt-4">
+                {error && <Alert variant="danger">{error}</Alert>}
+                {success && <Alert variant="success">{success}</Alert>}
+            </div>
+                <Form onSubmit={handleSubmit}>
+                <div className="card-body">
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Email:</Form.Label>
+                        <Form.Control
+                            type="email"
+                            placeholder="Enter email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </Form.Group><br/>
+
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Senha:</Form.Label>
                         <div class="input-group">
-                            <input type={isClosed ? "password" : "text" } className="form-control" placeholder="Insira sua senha..."></input>
-                            <button type="button" 
+                        <Form.Control
+                            type={isClosed ? "password" : "text" }
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                         <Button type="button" 
                             onClick={updatePasswordState}
                             onChange={(e) => setPassword(e.target.value)} 
                             className="btn btn-light border">
                             
-                            <i className={isClosed ? "fa fa-eye-slash" : "fa fa-eye" }></i></button>
+                            <i className={isClosed ? "fa fa-eye-slash" : "fa fa-eye" }></i></Button>
                         </div>
-                    </div>                
-                </div>
-            </div>
-             </div>
-            <div className="card-footer text-end">
-                <button type="submit" className="btn btn-sm btn-success">Login</button>
-            </div>
-       
+                    </Form.Group>
+                    </div>
+               
+            
+                    <div className="card-footer text-end">
+                        <Button type="submit" className="btn btn-sm btn-success">
+                            Entrar
+                        </Button>
+                    </div>
+            </Form>
+
         </div>
-    </div>
-    </form>
-    </>
+        </div>
     );
-}
+};
 
 export default LoginPage;

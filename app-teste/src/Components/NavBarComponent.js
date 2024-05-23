@@ -22,7 +22,7 @@ function NavBarComponent(){
             </Nav>
             <Nav>
             <Nav className="d-flex col-2">
-                <a href="/Login" className="btn btn-success">Logar</a>
+                <a href="/Login" className="btn btn-success">Login</a>
             </Nav>
             </Nav>
             </Navbar.Collapse>

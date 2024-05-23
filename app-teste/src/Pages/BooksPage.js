@@ -25,7 +25,7 @@ function BooksPage(){
     return(
         <div className="pt-2">
 
-            <div className="card mb-5 mx-3">
+            <div className="card mb-5 mx-5">
 
                 <div className="card-header " >                        
                 <h2>Catálogo de Livros</h2>
@@ -39,35 +39,35 @@ function BooksPage(){
 
                             <div className="catalog-grid ">
 
-                            <img src={como_era} alt="Filme 1" className="catalog-image"/>
+                            <img src={como_era} title="Como eu era antes de você" className="catalog-image"/>
 
-                            <img src={contos} alt="Filme 2" className="catalog-image" />
+                            <img src={contos} title="Contos Peculiares" className="catalog-image" />
 
-                            <img src={coraline} alt="Filme 3" className="catalog-image" />
+                            <img src={coraline} title="Coraline " className="catalog-image" />
 
-                            <img src={crepusculo} alt="Filme 4" className="catalog-image" />
+                            <img src={crepusculo} title="Crepusculo " className="catalog-image" />
 
-                            <img src={gato_preto} alt="Filme 4" className="catalog-image" />
+                            <img src={gato_preto} title="O gato Preto " className="catalog-image" />
 
-                            <img src={it} alt="Filme 4" className="catalog-image" />
+                            <img src={it} title="It a Coisa " className="catalog-image" />
 
-                            <img src={pijama} alt="Filme 4" className="catalog-image" />
+                            <img src={pijama} title="O menino do pijama listrado " className="catalog-image" />
 
-                            <img src={vbs} alt="Filme 4" className="catalog-image" />
+                            <img src={vbs} title="Vermelho Branco Sangue Azul " className="catalog-image" />
 
-                            <img src={hp_enigma} alt="Filme 4" className="catalog-image" />
+                            <img src={hp_enigma} title="Harry Potter e o enigma do príncipe " className="catalog-image" />
 
-                            <img src={insurgente} alt="Filme 4" className="catalog-image" />
+                            <img src={insurgente} title="Insurgente " className="catalog-image" />
 
-                            <img src={divergente} alt="Filme 4" className="catalog-image" />
+                            <img src={divergente} title="Divergente " className="catalog-image" />
 
-                            <img src={hp_reliquias} alt="Filme 4" className="catalog-image" />
+                            <img src={hp_reliquias} title="Harry Potter e as reliquias da morte" className="catalog-image" />
 
-                            <img src={pj} alt="Filme 4" className="catalog-image" />
+                            <img src={pj} title="Percy Jackson " className="catalog-image" />
 
-                            <img src={orgulho} alt="Filme 4" className="catalog-image" />
+                            <img src={orgulho} title="Orgulho e Preconceito " className="catalog-image" />
 
-                            <img src={jv} alt="Filme 4" className="catalog-image" />
+                            <img src={jv} title="Jogos Vorazes" className="catalog-image" />
 
                             </div>
 
@@ -76,7 +76,6 @@ function BooksPage(){
                     </div>
 
             </div>
-
 
         </div>
     );

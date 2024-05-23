@@ -32,7 +32,7 @@ function HomePage(){
 
             <div className="card mb-5 mx-3">
 
-                <div className="card-header " >                        
+                <div className="card-header borda" >                        
                 <h2>Livros</h2>
                 </div>
 
@@ -45,74 +45,75 @@ function HomePage(){
                             <div className="catalog-grid ">
 
                         
-                            <img src={gato_preto} alt="Filme 4" className="catalog-image" />
+                            <img src={gato_preto} title=' O Gato Preto' className="catalog-image" />
 
-                            <img src={it} alt="Filme 4" className="catalog-image" />
+                            <img src={it} title='it a Coisa' className="catalog-image" />
 
-                            <img src={pijama} alt="Filme 4" className="catalog-image" />
+                            <img src={pijama} title='O menino do Pijama Listrado' className="catalog-image" />
 
-                            <img src={vbs} alt="Filme 4" className="catalog-image" />
+                            <img src={vbs} title='Vermelho Branco Sangue Azul' className="catalog-image" />
 
-                            <img src={hp_enigma} alt="Filme 4" className="catalog-image" />
+                            <img src={hp_enigma} title='Harry Potter e o enigma do príncipe' className="catalog-image" />
 
-                            <img src={insurgente} alt="Filme 4" className="catalog-image" />
+                            <img src={insurgente} title='Insurgente' className="catalog-image" />
 
-                            <img src={divergente} alt="Filme 4" className="catalog-image" />
+                            <img src={divergente} title='Divergente' className="catalog-image" />
 
-                            <img src={hp_reliquias} alt="Filme 4" className="catalog-image" />
+                            <img src={hp_reliquias} title='Harry Potter e as relíquias da morte' className="catalog-image" />
 
-                            <img src={pj} alt="Filme 4" className="catalog-image" />
+                            <img src={pj} title='Percy Jackson' className="catalog-image" />
 
-                            <img src={orgulho} alt="Filme 4" className="catalog-image" />
+                            <img src={orgulho} title='Orgulho e Preconceito' className="catalog-image" />
+                        </div>
+                        </div>
 
                            
-                      <div className='card-header  h2'>Filmes</div>
+                      <br/><div className='card-header borda'><h2>Filmes</h2></div> <br/>
+
+                      <div className="catalog-container">
+
+                      <div className="catalog-grid ">
+
                 
 
-                <img src={bela_fera_capa} alt="Filme 2" className="catalog-image" />
+                            <img src={bela_fera_capa} title='A Bela e a Fera' className="catalog-image" />
+
+                            <img src={black_phone_capa} title='Telefone Preto' className="catalog-image" />
+
+                            <img src={fabrica_capa} title='A fantastica fabrica de chocolate' className="catalog-image" />
+
+                            <img src={it_capa} title='It a Coisa' className="catalog-image" />
+
+                            <img src={paranormal_capa} title='Paranorman' className="catalog-image" />
+
+                            <img src={malevola_capa} title='Malévola' className="catalog-image" />
+
+                            <img src={morte_capa} title='A Morte te da Parabéns' className="catalog-image" />
+
+                            <img src={piratas_capa} title='Piratas Pirados' className="catalog-image" />
+
+                            <img src={peculiares_capa} title='O lar das crianças Peculiares' className="catalog-image" />
+
+                            <img src={rango_capa} title='Rango' className="catalog-image" />
+
+                            <img src={tesoura_capa} title='Edward mãos de tesoura' className="catalog-image" />
+
+                            <img src={festa_capa} title='Viva a vida é uma festa' className="catalog-image" />
+
+                            <img src={panico_capa} title='Panico' className="catalog-image" />
+
+                            <img src={nove_capa} title='Nove em busca da salvação' className="catalog-image" />
+
+                            <img src={oz_capa} title='O mágico de Oz' className="catalog-image" />
 
 
-                 <img src={black_phone_capa} alt="Filme 2" className="catalog-image" />
+                            </div>
+                        </div>
 
-
-
-<img src={fabrica_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={it_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={paranormal_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={malevola_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={morte_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={piratas_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={peculiares_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={rango_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={tesoura_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={festa_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={panico_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={nove_capa} alt="Filme 4" className="catalog-image" />
-
-<img src={oz_capa} alt="Filme 4" className="catalog-image" />
-
-
-                </div>
-
-
-
+                    </div>
+                
             </div>
-            </div>
-
-        </div>
-
-</div>
+    </div>
 
 
     

@@ -77,3 +77,11 @@ object-position: top;
 .bottom{
   object-position: bottom;
 }
+
+.borda{
+  border: 1px solid black;
+}
+
+.center{
+  align-items: center;
+}
