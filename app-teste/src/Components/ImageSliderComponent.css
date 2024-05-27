@@ -85,3 +85,14 @@ object-position: top;
 .center{
   align-items: center;
 }
+
+.text-overlay {
+  position: absolute;
+  top: 10px; /* Distância de 10px do topo */
+  left: 10px; /* Distância de 10px da esquerda */
+  background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo do texto (preto com transparência de 50%) */
+  padding: 10px; /* Espaçamento interno do texto */
+  color: white; /* Cor do texto */
+  text-align: left; /* Alinhamento do texto à esquerda */
+  z-index: 10; /* Garante que o elemento seja sempre visível */
+}

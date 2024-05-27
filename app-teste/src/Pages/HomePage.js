@@ -32,7 +32,7 @@ function HomePage(){
 
             <div className="card mb-5 mx-3">
 
-                <div className="card-header borda" >                        
+                <div className="card-header mx-3 mt-3 borda" >                        
                 <h2>Livros</h2>
                 </div>
 
@@ -68,13 +68,12 @@ function HomePage(){
                         </div>
 
                            
-                      <br/><div className='card-header borda'><h2>Filmes</h2></div> <br/>
+                      <br/><div className='card-header mt-3 borda'><h2>Filmes</h2></div> <br/>
 
                       <div className="catalog-container">
 
                       <div className="catalog-grid ">
-
-                
+               
 
                             <img src={bela_fera_capa} title='A Bela e a Fera' className="catalog-image" />
 
@@ -109,9 +108,7 @@ function HomePage(){
 
                             </div>
                         </div>
-
                     </div>
-                
             </div>
     </div>
 

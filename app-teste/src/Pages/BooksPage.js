@@ -27,7 +27,7 @@ function BooksPage(){
 
             <div className="card mb-5 mx-5">
 
-                <div className="card-header " >                        
+                <div className="card-header" >                        
                 <h2>Catálogo de Livros</h2>
                 </div>
 
@@ -37,7 +37,7 @@ function BooksPage(){
                         <div className="catalog-container">
 
 
-                            <div className="catalog-grid ">
+                            <div className="catalog-grid">
 
                             <img src={como_era} title="Como eu era antes de você" className="catalog-image"/>
 

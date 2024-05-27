@@ -31,9 +31,9 @@ const LoginPage = () => {
 
     return (
         <div className="pt-4">
-        <div className="card col-lg-5 col-md-10 mx-auto ">
+        <div className="card col-lg-5 col-md-10 mx-auto">
 
-            <div className="card-header">
+            <div className="card-header ">
                 Login
             </div>
             <div className=" mx-3 pt-4">

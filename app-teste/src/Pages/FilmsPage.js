@@ -72,30 +72,33 @@ function FilmsPage(){
 
 
     return(
-        <div className="pt-2">
+        <div className="pt-2 ">
 
-            <div className="card mb-5 mx-6">
+            <div className="card col-lg-10 col-md-11 mx-auto">
 
                 <div className="slider-container">
 
                 <Slider {...settings}>
                     <div className="slide">
-                    <img src={oz} title="Coraline" className="slider-image " />
+                    <img src={oz} title="Oz: Mágico e Poderoso " className="slider-image" />
+                      <div class="text-overlay">
+                        <h2>Megamente</h2>
+                      </div>
                     </div>
                     <div className="slide">
                     <img src={frank} title="Frankenweenie" className="slider-image" />
                     </div>
                     <div className="slide">
-                    <img src={telefone} title="Megamente" className="slider-image " />
+                    <img src={telefone} title="O Telefone Preto" className="slider-image" />
                     </div>
                     <div className="slide">
-                    <img src={paranormal} title="Megamente" className="slider-image" />
+                    <img src={paranormal} title="Paranorman" className="slider-image" />
                     </div>
                     <div className="slide">
-                    <img src={coraline} title="" className="slider-image coraline" />
+                    <img src={coraline} title="Coraline" className="slider-image coraline" />
                     </div>
                     <div className="slide">
-                    <img src={alice} title="Megamente" className="slider-image" />
+                    <img src={alice} title="Alice no País das maravilhas" className="slider-image" />
                     </div>
                     <div className="slide">
                     <img src={megamente} title="Megamente" className="slider-image" />
@@ -104,7 +107,7 @@ function FilmsPage(){
                 <br/>
                 
                 </div>
-                <div className="card-header borda"><h2>Catálogo de Filmes</h2></div>
+                <div className="card-header mx-3 borda"><h2>Catálogo de Filmes</h2></div>
 
               
             <div className="card-body mt-2">
@@ -157,11 +160,11 @@ function FilmsPage(){
 
                     <img src={festa_capa} title="Festa no céu " className="catalog-image" />
 
-                    <img src={panico_capa} title="Panico " className="catalog-image" />
+                    <img src={panico_capa} title="Pânico " className="catalog-image" />
 
                     <img src={nove_capa} title="Nove em busca da salvação" className="catalog-image" />
 
-                    <img src={oz_capa} title="Filme 4" className="catalog-image" />
+                    <img src={oz_capa} title="Oz: Mágico e Poderoso" className="catalog-image" />
 
                 </div>
 
