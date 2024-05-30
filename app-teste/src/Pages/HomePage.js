@@ -31,9 +31,9 @@ function HomePage(){
         customPaging: i => (
           <div
             style={{
-              color: "black",
+              color: "blue",
               borderRadius: "10px",
-              border: "5px black solid"
+              border: "2px black solid"
             }}
           >
           </div>
@@ -41,7 +41,7 @@ function HomePage(){
       };
    
 
-    //realizar ações ao iniciar componente
+    //UseEffect
     useEffect(() => {
         async function buscarFilmes() {
             const filmes = axios.get("http://143.198.156.185/api/home").then(function (value) {
@@ -50,16 +50,15 @@ function HomePage(){
                 console.log(value);
             });
         }
-
-        async function buscaLivros() {
-            const filmes = axios.get("http://143.198.156.185/api/home").then(function (value) {
+        async function buscarLivros() {
+            const livros = axios.get("http://143.198.156.185/api/home").then(function (value) {
                 setLivros(value.data);
             }).catch(function (value) {
                 console.log(value);
             });
         }
+        buscarLivros();
         buscarFilmes();
-        buscaLivros();
     });
 
 
@@ -73,8 +72,8 @@ function HomePage(){
                     {filmes.map((filme, index) => (
                         <div className="slide" key={index}>
                             <img
-                                className="d-block w-100"
-                                src={filme.imagens[2]}
+                                className="slider-image"
+                                src={filme.imagens}
                                 alt={filme.titulo}
                             />
                             <div className="slide">
@@ -87,61 +86,52 @@ function HomePage(){
                 </div>
 
                 <div className="card-header mx-3 mt-3 borda" >                        
-                <h2>Livros</h2>
+                <h2>Filmes</h2>
                 </div>
 
 
-                    <div className="card-body mt-2">
+                <div className="card-body mt-2">
 
-                        <div className="catalog-container">
+                      <div className="catalog-container">               
 
+                        <div className="catalog-grid">
 
-                            <div className="catalog-grid ">
-
-                            <Row className="pt-2 pb-3">
-                            {livros.map((livro, index) => (
-                            <Col xs={6} sm={4} md={3} lg={2}>
-                            <Card>
-                            <Card.Img variant="top" src={livro.url_thumbnail} />
-                            <Card.Body>
-                                <Card.Title>{livro.titulo}</Card.Title>
-                            </Card.Body>
-                            </Card>
-                            </Col>
-                            ))}
-                            </Row>
+                                {filmes.map((filme, index) => (
+                                <Col xs={6} sm={4} md={3} lg={2}>
+                                <Card className="catalog-image">
+                                    <Card.Img  className="catalog-image" src={filme.url_thumbnail} />
+                                    <Card.Body>
+                                        <Card.Title className="catolog-title">{filme.titulo}</Card.Title>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                ))}
                         </div>
-
-                           
-                      <br/><div className='card-header mt-3 borda'><h2>Filmes</h2></div> <br/>
-
-                      <div className="catalog-container">
-
-                      <div className="catalog-grid ">
-               
-
-                        <Row className="pt-2 pb-3">
-                        {filmes.map((filme, index) => (
-                        <Col xs={6} sm={4} md={3} lg={2}>
-                        <Card>
-                            <Card.Img variant="top" src={filme.url_thumbnail} />
-                            <Card.Body>
-                                <Card.Title>{filme.titulo}</Card.Title>
-                            </Card.Body>
-                        </Card>
-                        </Col>
-                         ))}
-                        </Row>
-
-                            </div>
                         </div>
+                </div>
+
+                    <div className="card-header mx-3 mt-3 borda" >                        
+                    <h2>Livros</h2>
                     </div>
+                    <div className="card-body mt-2">
+                    <div className="catalog-grid">
+
+                                {filmes.map((livros, index) => (
+                                <Col xs={6} sm={4} md={3} lg={2}>
+                                <Card className="catalog-image">
+                                    <Card.Img  className="catalog-image" src={livros.url_thumbnail} />
+                                    <Card.Body>
+                                        <Card.Title className="catolog-title">{livros.titulo}</Card.Title>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                ))}
+                        </div>
+                        </div>
+
+                </div>
             </div>
-    </div>
-    </div>
-
-
-    
+     
     );
 }
 

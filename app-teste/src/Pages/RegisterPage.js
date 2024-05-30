@@ -2,28 +2,30 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-const LoginPage = () => {
+const RegisterPage = () => {
     let [isClosed, setIsClosed] = useState(true)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
     const [error, setError] = useState(null);
+    let [Mensagem_erro]= useState("Usuário não cadastrado!");
+    let [Mensagem_sucesso]= useState("Usuário cadastrado com sucesso!");
+
+
     const [success, setSuccess] = useState(null);
-    let [Mensagem]= useState("Email ou senha incorretos!");
 
     async function handleSubmit(e){
         e.preventDefault();
 
-        let response = await axios.post('http://143.198.156.185/api/auth/login', {
+        let response = await axios.post('http://143.198.156.185/api/auth/register', {
+            "name": name,
             "email": email,
             "password": password
-        }).then(function (value) {
-            setSuccess(`Seja bem vindo, ${value.data.user.name}!`);
-            setError(null);
+        }).then(function (response) {
+            console.log(Mensagem_sucesso);
           })
-          .catch(function (value) {
-            console.log(value);
-            setError(Mensagem);
-            setSuccess(null);
+          .catch(function (error) {
+            console.log(error);
           });
         }
         function updatePasswordState(value){
@@ -43,6 +45,15 @@ const LoginPage = () => {
             </div>
                 <Form onSubmit={handleSubmit}>
                 <div className="card-body">
+                <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Nome:</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Insira seu nome"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                    </Form.Group><br/>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email:</Form.Label>
                         <Form.Control
@@ -75,7 +86,7 @@ const LoginPage = () => {
             
                     <div className="card-footer text-end">
                         <Button type="submit" className="btn btn-sm btn-success">
-                            Entrar
+                            Cadastrar
                         </Button>
                     </div>
             </Form>
@@ -85,4 +96,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default RegisterPage;

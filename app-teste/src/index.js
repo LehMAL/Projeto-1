@@ -15,6 +15,8 @@ import HomePage from './Pages/HomePage';
 import FilmsPage from './Pages/FilmsPage';
 import BooksPage from './Pages/BooksPage';
 import LoginPage from './Pages/LoginPage';
+import RegisterPage from './Pages/RegisterPage';
+
 
 
 const router = createBrowserRouter([
@@ -33,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/Books",
     element: <BooksPage />,
+  },
+  {
+    path: "/Register",
+    element: <RegisterPage />,
   },
   {
     path: "/Login",

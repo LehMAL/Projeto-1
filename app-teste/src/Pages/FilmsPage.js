@@ -62,7 +62,7 @@ function FilmsPage(){
             style={{
               color: "blue",
               borderRadius: "10px",
-              border: "5px white solid"
+              border: "2px white solid"
             }}
           >
           </div>
@@ -81,9 +81,6 @@ function FilmsPage(){
                 <Slider {...settings}>
                     <div className="slide">
                     <img src={oz} title="Oz: Mágico e Poderoso " className="slider-image" />
-                      <div class="text-overlay">
-                        <h2>Megamente</h2>
-                      </div>
                     </div>
                     <div className="slide">
                     <img src={frank} title="Frankenweenie" className="slider-image" />
