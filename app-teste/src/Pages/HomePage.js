@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import {  Row, Col, Card } from 'react-bootstrap';
+import {  Col, Card } from 'react-bootstrap';
 import Slider from "react-slick";
 import '../Components/ImageSliderComponent.css';
 
@@ -41,24 +41,24 @@ function HomePage(){
       };
    
 
-    //UseEffect
-    useEffect(() => {
+      useEffect(() => {
         async function buscarFilmes() {
-            const filmes = axios.get("http://143.198.156.185/api/home").then(function (value) {
-                setFilmes(value.data);
+            const filmes = axios.get("http://143.198.156.185/api/filmes").then(function (value) {
+                setFilmes(value.data);console.log(value.data)
             }).catch(function (value) {
                 console.log(value);
             });
         }
-        async function buscarLivros() {
-            const livros = axios.get("http://143.198.156.185/api/home").then(function (value) {
+
+        async function buscaLivros() {
+            const filmes = axios.get("http://143.198.156.185/api/livros").then(function (value) {
                 setLivros(value.data);
             }).catch(function (value) {
                 console.log(value);
             });
         }
-        buscarLivros();
         buscarFilmes();
+        buscaLivros();
     });
 
 
@@ -72,8 +72,8 @@ function HomePage(){
                     {filmes.map((filme, index) => (
                         <div className="slide" key={index}>
                             <img
-                                className="slider-image"
-                                src={filme.imagens}
+                                className="slider-image center-img"
+                                src={filme.imagens[0].url}
                                 alt={filme.titulo}
                             />
                             <div className="slide">
@@ -99,7 +99,7 @@ function HomePage(){
                                 {filmes.map((filme, index) => (
                                 <Col xs={6} sm={4} md={3} lg={2}>
                                 <Card className="catalog-image">
-                                    <Card.Img  className="catalog-image" src={filme.url_thumbnail} />
+                                    <Card.Img   src={filme.url_thumbnail} />
                                     <Card.Body>
                                         <Card.Title className="catolog-title">{filme.titulo}</Card.Title>
                                     </Card.Body>
@@ -116,12 +116,12 @@ function HomePage(){
                     <div className="card-body mt-2">
                     <div className="catalog-grid">
 
-                                {filmes.map((livros, index) => (
+                                {livros.map((livro, index) => (
                                 <Col xs={6} sm={4} md={3} lg={2}>
                                 <Card className="catalog-image">
-                                    <Card.Img  className="catalog-image" src={livros.url_thumbnail} />
+                                    <Card.Img   src={livro.url_thumbnail} />
                                     <Card.Body>
-                                        <Card.Title className="catolog-title">{livros.titulo}</Card.Title>
+                                        <Card.Title className="catolog-title">{livro.titulo}</Card.Title>
                                     </Card.Body>
                                 </Card>
                                 </Col>

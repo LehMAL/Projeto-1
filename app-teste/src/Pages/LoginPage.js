@@ -73,11 +73,15 @@ const LoginPage = () => {
                     </div>
                
             
-                    <div className="card-footer text-end">
+                    <div className="card-footer text-center">
                         <Button type="submit" className="btn btn-sm btn-success">
                             Entrar
-                        </Button>
-                    </div>
+                        </Button><br/>
+                   
+                    <div className='register-link'>
+                <p>Nao possui conta? <a href='/Register'>Cadastrar</a></p>
+              </div>
+              </div>
             </Form>
 
         </div>

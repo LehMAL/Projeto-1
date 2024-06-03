@@ -7,7 +7,7 @@
 }
 
 .slider-container {
-  margin-bottom: 2rem; /* Espaço entre o slider e o catálogo */
+  margin-bottom: 1rem; /* Espaço entre o slider e o catálogo */
 }
 
 .slide {
@@ -70,9 +70,14 @@
 }
 
 /* Images position   */
-.coraline{
+.top{
 object-position: top;
+
 }
+
+.center-img{
+  object-position: center;
+  }
 
 .bottom{
   object-position: bottom;

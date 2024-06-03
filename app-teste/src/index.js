@@ -15,7 +15,7 @@ import HomePage from './Pages/HomePage';
 import FilmsPage from './Pages/FilmsPage';
 import BooksPage from './Pages/BooksPage';
 import LoginPage from './Pages/LoginPage';
-import RegisterPage from './Pages/RegisterPage';
+import RegisterComponent from './Components/RegisterComponent';
 
 
 
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/Register",
-    element: <RegisterPage />,
+    element: <RegisterComponent />,
   },
   {
     path: "/Login",
