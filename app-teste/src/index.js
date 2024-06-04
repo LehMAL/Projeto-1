@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import Sinopse from './Components/SinopseComponents';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -43,7 +42,17 @@ const router = createBrowserRouter([
   {
     path: "/Login",
     element: <LoginPage />,
+  },
+  {
+    path: "/filme/:id",
+    element: <Sinopse />,
+  },
+
+  {
+    path: "/livro/:id",
+    element: <Sinopse />,
   }
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

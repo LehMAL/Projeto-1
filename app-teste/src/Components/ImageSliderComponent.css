@@ -29,7 +29,6 @@
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Layout responsivo */
-  gap: 1rem; /* Espaçamento entre as imagens */
 }
 
 .catalog-image {
@@ -48,26 +47,26 @@
   text-align: center;
 }
 
-/* Estilos responsivos */
+/* Estilos responsivos 
 @media (max-width: 1024px) {
   .slider-image {
-    height: 400px; /* Ajusta a altura das imagens para telas médias */
+    height: 400px; /* Ajusta a altura das imagens para telas médias 
   }
 
 }
 
 @media (max-width: 600px) {
   .slider-image {
-    height: 300px; /* Ajusta a altura das imagens para telas pequenas */
+    height: 300px; /* Ajusta a altura das imagens para telas pequenas 
   }
 
 }
 
 @media (max-width: 480px) {
   .slider-image {
-    height: 250px; /* Ajusta a altura das imagens para telas muito pequenas */
+    height: 250px; /* Ajusta a altura das imagens para telas muito pequenas 
   }
-}
+}*/
 
 /* Images position   */
 .top{
@@ -90,6 +89,41 @@ object-position: top;
 .center{
   align-items: center;
 }
+
+.body-sinopse {
+  display: flex;
+}
+
+/* Sinopse */
+
+.image {
+  margin-right: 20px; /* distância da imagem */
+}
+
+.description {
+  flex-grow: 1;
+}
+
+
+.sinopse {
+  margin-top: 20px; /* distância entre a imagem e o texto */
+  line-height: 2.5; /* espaçamento entre as linhas */
+}
+
+.catalog-link {
+  text-decoration: none;
+}
+
+/* Estilo geral para centralização */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Altura de 100% da viewport */
+  background-color: #f8f9fa; /* Cor de fundo opcional */
+}
+
+
 
 /*
 .text-overlay {

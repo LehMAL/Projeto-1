@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import {  Col, Card } from 'react-bootstrap';
-import Slider from "react-slick";
+import {  Col, Carousel, Row, Card } from 'react-bootstrap';
 import '../Components/ImageSliderComponent.css';
+import { Link } from 'react-router-dom';
 
 
 
@@ -10,36 +10,6 @@ function HomePage(){
 
     const [filmes, setFilmes] = useState([]);
     const [livros, setLivros] = useState([]);
-
-    var settings = {
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        pauseOnHover: true,
-        appendDots: dots => (
-          <div
-            style={{
-              padding: "30px"
-            }}
-          >
-            <ul style={{ margin: "0px" }}> {dots} </ul>
-          </div>
-        ),
-        customPaging: i => (
-          <div
-            style={{
-              color: "blue",
-              borderRadius: "10px",
-              border: "2px black solid"
-            }}
-          >
-          </div>
-        )
-      };
-   
 
       useEffect(() => {
         async function buscarFilmes() {
@@ -50,15 +20,15 @@ function HomePage(){
             });
         }
 
-        async function buscaLivros() {
-            const filmes = axios.get("http://143.198.156.185/api/livros").then(function (value) {
+        async function buscarLivros() {
+            const livros = axios.get("http://143.198.156.185/api/livros").then(function (value) {
                 setLivros(value.data);
             }).catch(function (value) {
                 console.log(value);
             });
         }
         buscarFilmes();
-        buscaLivros();
+        buscarLivros();
     });
 
 
@@ -66,24 +36,23 @@ function HomePage(){
         <div className="pt-2">
 
             <div className="card mb-5 mx-3">
-            <div className="slider-container">
-
-            <Slider {...settings}>
+            <Row className="pt-2 pb-3">
+                <Carousel s>
                     {filmes.map((filme, index) => (
-                        <div className="slide" key={index}>
+                        <Carousel.Item key={index}>
                             <img
-                                className="slider-image center-img"
+                                className="d-block w-100"
                                 src={filme.imagens[0].url}
                                 alt={filme.titulo}
                             />
-                            <div className="slide">
+                            <Carousel.Caption>
                                 <h3>{filme.title}</h3>
                                 <p>{filme.sinopse}</p>
-                            </div>
-                        </div>
+                            </Carousel.Caption>
+                        </Carousel.Item>
                     ))}
-                </Slider>
-                </div>
+                </Carousel>
+            </Row>
 
                 <div className="card-header mx-3 mt-3 borda" >                        
                 <h2>Filmes</h2>
@@ -94,19 +63,20 @@ function HomePage(){
 
                       <div className="catalog-container">               
 
-                        <div className="catalog-grid">
-
-                                {filmes.map((filme, index) => (
-                                <Col xs={6} sm={4} md={3} lg={2}>
-                                <Card className="catalog-image">
-                                    <Card.Img   src={filme.url_thumbnail} />
+                      <div className="catalog-grid">
+                            {filmes.map((filme, index) => (
+                                <Col key={index} xs={6} sm={4} md={3} lg={2}>
+                                <Link to={"/filme/" + filme.id} className="catalog-link">
+                                    <Card className="catalog-image">
+                                    <Card.Img src={filme.url_thumbnail} />
                                     <Card.Body>
-                                        <Card.Title className="catolog-title">{filme.titulo}</Card.Title>
+                                        <Card.Title className="catalog-title">{filme.titulo}</Card.Title>
                                     </Card.Body>
-                                </Card>
+                                    </Card>
+                                </Link>
                                 </Col>
-                                ))}
-                        </div>
+                            ))}
+                            </div>
                         </div>
                 </div>
 
@@ -117,15 +87,17 @@ function HomePage(){
                     <div className="catalog-grid">
 
                                 {livros.map((livro, index) => (
-                                <Col xs={6} sm={4} md={3} lg={2}>
-                                <Card className="catalog-image">
-                                    <Card.Img   src={livro.url_thumbnail} />
+                                <Col key={index} xs={6} sm={4} md={3} lg={2}>
+                                <Link to={"/livro/" + livro.id} className="catalog-link">
+                                    <Card className="catalog-image">
+                                    <Card.Img src={livro.url_thumbnail} />
                                     <Card.Body>
-                                        <Card.Title className="catolog-title">{livro.titulo}</Card.Title>
+                                        <Card.Title className="catalog-title">{livro.titulo}</Card.Title>
                                     </Card.Body>
-                                </Card>
+                                    </Card>
+                                </Link>
                                 </Col>
-                                ))}
+                            ))}     
                         </div>
                         </div>
 

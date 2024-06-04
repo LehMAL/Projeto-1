@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
+import background from '../Images/fundo.jpg';
 
 const LoginPage = () => {
     let [isClosed, setIsClosed] = useState(true)
@@ -31,10 +32,11 @@ const LoginPage = () => {
         }
 
     return (
+        <div>
         <div className="pt-4">
         <div className="card col-lg-5 col-md-10 mx-auto">
 
-            <div className="card-header ">
+            <div className="card-header h4">
                 Login
             </div>
             <div className=" mx-3 pt-4">
@@ -47,7 +49,7 @@ const LoginPage = () => {
                         <Form.Label>Email:</Form.Label>
                         <Form.Control
                             type="email"
-                            placeholder="Enter email"
+                            placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
@@ -58,7 +60,7 @@ const LoginPage = () => {
                         <div class="input-group">
                         <Form.Control
                             type={isClosed ? "password" : "text" }
-                            placeholder="Password"
+                            placeholder="Senha"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
@@ -73,17 +75,18 @@ const LoginPage = () => {
                     </div>
                
             
-                    <div className="card-footer text-center">
+                    <div className="card-footer text-end">
                         <Button type="submit" className="btn btn-sm btn-success">
                             Entrar
                         </Button><br/>
                    
-                    <div className='register-link'>
+                    <div className='register-link text-center'>
                 <p>Nao possui conta? <a href='/Register'>Cadastrar</a></p>
               </div>
               </div>
             </Form>
 
+        </div>
         </div>
         </div>
     );
