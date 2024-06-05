@@ -14,7 +14,7 @@ function BooksPage(){
 
   useEffect(() => {
     async function buscarLivros() {
-      const livros = axios.get("http://143.198.156.185/api/livro").then(function (value) {
+      const livros = axios.get("http://143.198.156.185/api/livros").then(function (value) {
         setLivros(value.data);
       }).catch(function (value) {
         console.log(value);

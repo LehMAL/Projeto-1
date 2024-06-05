@@ -19,7 +19,6 @@ function NavBarComponent(){
                 <Nav.Link href="/Home">Home</Nav.Link>
                 <Nav.Link href="/Films">Filmes</Nav.Link>    
                 <Nav.Link href="/Books">Livros</Nav.Link>
-                <Nav.Link href="/Register">Cadastrar</Nav.Link>                  
                   
             </Nav>
             <Nav>

@@ -33,8 +33,8 @@ function RegisterComponent() {
 
     return (
         <div className="center-container">
-            <div className="card efeito-zero">
-                <div className="card-header efeito-um">
+            <div className="card ">
+                <div className="card-header ">
                     <h4>Cadastro</h4>
                 </div>
                 {error && <Alert variant="danger">{error}</Alert>}
@@ -78,7 +78,7 @@ function RegisterComponent() {
                             </div>
                         </Form.Group>
                     </div>
-                    <div className="card-footer efeito-dois">
+                    <div className="card-footer text-end">
                         <Button type="submit" className="btn btn-sm btn-success">
                             Cadastrar
                         </Button>

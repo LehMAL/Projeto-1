@@ -119,8 +119,21 @@ object-position: top;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Altura de 100% da viewport */
+  height: 90vh; /* Altura de 100% da viewport */
+  width: 195vh;
   background-color: #f8f9fa; /* Cor de fundo opcional */
+}
+
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para o cartão */
+  justify-content: space-between; /* Garante que o footer fique no final */
+  border-radius: 10px; /* Bordas arredondadas */
+  background-color: #ffffff; /* Cor de fundo do cartão */
+}
+
+.card-body {
+  flex-grow: 1; /* O corpo do card cresce para preencher o espaço disponível */
 }
 
 

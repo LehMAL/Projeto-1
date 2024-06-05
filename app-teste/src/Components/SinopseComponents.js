@@ -20,19 +20,25 @@ const Sinopse = () => {
     });
 
     return (
-        <div className="card">
+      <div className="pt-4 mx-5">
+        <div className="card col-lg-8 col-md-auto col-sm-auto mx-auto">
           <div className="card-body body-sinopse">
             <div className="image">
               <img src={filme.url_thumbnail} height={500} alt={filme.titulo} />
             </div>
             <div className="description">
-              <div className="card-header mx-3 mt-3 borda">
+              <div className="card-header  borda">
                 <b>{filme.titulo}</b>
               </div><br/>
-              <div className="sinopse mx-3 mt-3 ">
+              <div className="sinopse">
                 {filme.sinopse}
-              </div>
-            </div>
+              </div> <br/><br/>
+              <div className="card-footer borda">
+              <b>CATEGORIA:</b> {filme.categoria}
+          </div> 
+          </div>
+          </div>
+          
           </div>
         </div>
       );

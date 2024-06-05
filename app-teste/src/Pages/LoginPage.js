@@ -32,9 +32,9 @@ const LoginPage = () => {
         }
 
     return (
-        <div>
+        <div className="center-container">
         <div className="pt-4">
-        <div className="card col-lg-5 col-md-10 mx-auto">
+        <div className="card">
 
             <div className="card-header h4">
                 Login
@@ -81,7 +81,7 @@ const LoginPage = () => {
                         </Button><br/>
                    
                     <div className='register-link text-center'>
-                <p>Nao possui conta? <a href='/Register'>Cadastrar</a></p>
+                <p>Não possui conta? <a href='/Register'>Cadastrar</a></p>
               </div>
               </div>
             </Form>
